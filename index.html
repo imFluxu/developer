@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLUXU! :D</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    #background-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #0e0e0e 100%);
+      overflow: hidden;
+    }
+
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      animation: float 10s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-100px) scale(1.2); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px; /* Aumenta a largura máxima */
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      margin-top: 120px; /* Aumenta o espaço superior */
+    }
+
+    .hero h1 {
+      font-size: 5rem; /* Aumenta o tamanho da fonte */
+      color: white;
+    }
+
+    .hero p {
+      margin-top: 30px;
+      font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+      color: #aaa;
+    }
+
+    .about, .projects, .timeline {
+      margin-top: 120px;
+    }
+
+    .projects .card {
+      background-color: #1a1a1a;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .projects .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .projects .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+
+    .timeline-entry {
+      margin-bottom: 30px;
+    }
+
+    .timeline-entry h4 {
+      font-size: 1.4rem;
+      color: #ffffff;
+    }
+
+    .timeline-entry span {
+      color: #888;
+    }
+
+    a {
+      color: #6ab4ff;
+      text-decoration: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      .hero h1 {
+        font-size: 6rem;
+      }
+
+      .hero p {
+        font-size: 1.75rem; 
+      }
+
+      .projects .card h3 {
+        font-size: 2rem; 
+      }
+
+      .timeline-entry h4 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 120px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="background-animation"></div>
+
+  <section class="hero" data-aos="fade-up">
+    <h1>FLUXU</h1>
+    <p>A young developer in progress, I love to code.</p>
+  </section>
+
+  <section class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I'm just a little guy around there that likes to mess with JavaScript, Python, HTML and CSS.</p>
+  </section>
+
+  <section class="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="card">
+      <a href="https://kitsunova.netlify.app" target="_blank">
+        <h3>KitsuNova</h3>
+      </a>
+    </div>
+    <div class="card">
+      <h3>Saturn <span style="color:#888; font-size:0.9rem;">(Private Project)</span></h3>
+    </div>
+    <p><a href="https://github.com/imFluxu" target="_blank">View more on GitHub</a></p>
+  </section>
+
+  <section class="timeline" data-aos="fade-up">
+    <h2>Timeline</h2>
+    <div class="timeline-entry">
+      <h4>Python <span>(2021-2024)</span></h4>
+    </div>
+    <div class="timeline-entry">
+      <h4>HTML <span>(2025)</span></h4>
+    </div>
+    <div class="timeline-entry">
+      <h4>CSS <span>(2025)</span></h4>
+    </div>
+    <div class="timeline-entry">
+      <h4>JavaScript <span>(2024-2025)</span></h4>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    const container = document.getElementById('background-animation');
+    for (let i = 0; i < 30; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      const size = Math.random() * 8 + 4;
+      dot.style.width = size + 'px';
+      dot.style.height = size + 'px';
+      dot.style.top = Math.random() * 100 + '%';
+      dot.style.left = Math.random() * 100 + '%';
+      dot.style.animationDuration = (8 + Math.random() * 4) + 's';
+      container.appendChild(dot);
+    }
+  </script>
+
+  <meta property="og:title" content="FLUXU!">
+  <meta property="og:description" content="See a little about me here.">
+  <meta property="og:color" content="#ffffff">
+</body>
+  </html>
+  
